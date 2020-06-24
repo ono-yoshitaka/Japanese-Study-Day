@@ -1,0 +1,584 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Chettan+2:wght@500&family=M+PLUS+Rounded+1c:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Sawarabi+Mincho');
+
+/* Reset */
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+body {
+    -webkit-text-size-adjust: none;
+}
+
+mark {
+    background-color: transparent;
+    color: inherit;
+}
+
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+input,
+select,
+textarea {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+}
+
+
+/* Base */
+
+*,
+*:visited,
+*:focus,
+*:active,
+*:link {
+    text-decoration: none;
+    outline: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 1000;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+h2 {
+    font-size: 2.5em;
+}
+
+h3 {
+    font-size: 2em;
+}
+
+h4 {
+    font-size: 1.75em;
+}
+
+h5 {
+    font-size: 1.5em;
+}
+
+h6 {
+    font-size: 1.2em;
+}
+
+a {
+    color: currentColor;
+    transition: .2s ease-in-out;
+    color: #000000;
+}
+
+p {
+    font-size: 1.2rem;
+}
+
+#wrapper {
+    margin: auto;
+    max-width: 980px;
+    font-family: 'Baloo Chettan 2', cursive, 'M PLUS Rounded 1c', sans-serif;
+}
+
+
+/* Header */
+
+#header {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#header h1 {
+    margin: 0.5em 0;
+    display: inline-block;
+}
+
+#header h1 span {
+    font-size: 0.865em;
+}
+
+#header p {
+    margin-bottom: 1rem;
+}
+
+#header #gnav {
+    margin: 5.2rem auto 0;
+    min-height: 3rem;
+    line-height: 3rem;
+    top: -30px;
+    transition: all 0.3s ease 0s;
+    font-size: 1.2rem;
+}
+
+#header #gnav.gnav_fixed {
+    margin: auto;
+    width: 100%;
+    text-align: center;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    position: fixed;
+    background-color: rgba(250, 250, 250, 0.9);
+    -webkit-transition: all .5s ease 0s, background .5s ease .2s;
+    transition: all .5s ease 0s, background .5s ease .2s;
+}
+
+#header #gnav ul {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#header #gnav ul li {
+    margin-left: 2rem;
+    padding-right: 2rem;
+}
+
+#header #gnav ul li a {
+    display: inline-block;
+}
+
+#header #gnav ul li a:hover {
+    transition: border-bottom 1s ease;
+}
+
+#header #gnav ul li a {
+    position: relative
+}
+
+#header #gnav ul li a:after {
+    margin-top: 0.6rem;
+    display: inline-block;
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 0;
+    height: 1px;
+    border-bottom: #222222 solid 2px;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    -webkit-transition: ease .5s;
+    transition: ease .5s
+}
+
+#header #gnav ul li a:hover:after {
+    width: 115%
+}
+
+@media screen and (max-width: 980px) {
+    #header {
+        justify-content: center;
+    }
+    #header #gnav {
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    #header #gnav {
+        display: none;
+    }
+}
+
+
+/* Header Drawer Navi */
+
+#dnav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    pointer-events: none;
+    display: none;
+    font-size: 1.5em;
+}
+
+#dnav * {
+    visibility: visible;
+}
+
+#dnav #dnav_header {
+    position: fixed;
+    width: 100%;
+    height: 70px;
+    background: rgba(0, 0, 0, .8);
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    display: none;
+}
+
+#dnav:focus-within #dnav_header {
+    display: flex;
+}
+
+#dnav .bg {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 70px);
+    visibility: hidden;
+    opacity: 0;
+    transition: .3s;
+    background: #000;
+}
+
+#dnav:focus-within .bg {
+    visibility: visible;
+    opacity: .6;
+}
+
+#dnav .button {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 1;
+    -webkit-appearance: none;
+    border: 0;
+    background: transparent;
+    border-radius: 0;
+    height: 70px;
+    width: 30px;
+    cursor: pointer;
+    pointer-events: auto;
+    margin-left: 25px;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+#dnav .button .icon-bar {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: #000000;
+    transition: .3s;
+}
+
+#dnav .button .icon-bar+.icon-bar {
+    margin-top: 5px;
+}
+
+#dnav:focus-within .button {
+    pointer-events: none;
+}
+
+#dnav:focus-within .button .icon-bar:nth-of-type(1) {
+    transform: translate3d(0, 8px, 0) rotate(45deg);
+    background: #ffffff;
+}
+
+#dnav:focus-within .button .icon-bar:nth-of-type(2) {
+    opacity: 0;
+}
+
+#dnav:focus-within .button .icon-bar:nth-of-type(3) {
+    transform: translate3d(0, -8px, 0) rotate(-45deg);
+    background: #ffffff;
+}
+
+#dnav_cont {
+    margin-top: 70px;
+    padding: 20px;
+    width: 60%;
+    max-width: 300px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: calc(100% - 70px);
+    background: #ffffff;
+    pointer-events: auto;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    transform: translateX(-100%);
+    transition: transform .3s;
+    will-change: transform;
+    contain: paint;
+    text-align: center;
+}
+
+#dnav_cont ul {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#dnav_cont ul li {
+    margin-bottom: 1.5rem;
+}
+
+#dnav_cont li a {
+    padding: 10px 5px;
+    display: block;
+    text-transform: uppercase;
+    transition: color .1s;
+}
+
+#dnav_cont li a:hover {
+    color: #222222;
+}
+
+#dnav_cont li:not(.small)+.small {
+    margin-top: auto;
+}
+
+#dnav:focus-within #dnav_cont {
+    transform: none;
+}
+
+@media screen and (max-width: 767px) {
+    #dnav {
+        display: block;
+    }
+}
+
+
+/* Main Common */
+
+#main section {
+    margin-bottom: 10rem;
+    display: flex;
+}
+
+#main section:first-of-type {
+    margin-top: 6rem;
+}
+
+#main h2,
+#main h3 {
+    font-family: "Sawarabi Mincho";
+}
+
+#main h3 {
+    margin: 1.5em 0 0.5em;
+}
+
+#main p {
+    display: inline-block;
+    line-height: 2em;
+}
+
+#main p.more {
+    width: calc(60%);
+    height: 3em;
+    margin: 1.8rem 0 0 1.8rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(240, 240, 240, 0.9);
+    text-align: center;
+    vertical-align: middle;
+    line-height: 3em;
+}
+
+#main p.more a {
+    width: 100%;
+}
+
+#main p.more a:hover {
+    background: rgba(220, 220, 220, 0.9);
+}
+
+@media screen and (max-width: 767px) {
+    #main section {
+        flex-direction: column;
+        font-size: 0.8rem;
+    }
+    #main p {
+        font-size: 0.9rem;
+    }
+    #main p.more {
+        margin: 2em auto 0;
+        width: 100%;
+    }
+}
+
+
+/* Main Gojuon */
+
+#main #gojuon #img_box {
+    width: calc(40% - 2rem);
+}
+
+#main #gojuon #txt_box {
+    margin-left: 3rem;
+    width: calc(60% - 2rem);
+}
+
+#main #gojuon img {
+    max-width: 100%;
+    display: inline-block;
+}
+
+#main #gojuon img.pc_view {
+    display: block;
+}
+
+#main #gojuon img.sp_view {
+    display: none;
+}
+
+#main #gojuon h2 {}
+
+@media screen and (max-width: 767px) {
+    #main #gojuon {
+        margin-top: 2rem;
+    }
+    #main #gojuon #img_box {
+        width: 100%;
+    }
+    #main #gojuon #txt_box {
+        margin: 0;
+        padding: 0 2em;
+        width: calc(90% - 1.75rem);
+    }
+    #main #gojuon img.pc_view {
+        display: none;
+    }
+    #main #gojuon img.sp_view {
+        display: block;
+        max-width: 90%;
+    }
+}

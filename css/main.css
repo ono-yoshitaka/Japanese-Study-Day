@@ -538,6 +538,10 @@ p {
 
 /* Main Gojuon */
 
+#main #gojuon {
+    background: whitesmoke;
+}
+
 #main #gojuon #img_box {
     width: calc(40% - 2rem);
 }
@@ -545,6 +549,7 @@ p {
 #main #gojuon #txt_box {
     margin-left: 3rem;
     width: calc(60% - 2rem);
+    background: wheat;
 }
 
 #main #gojuon img {
@@ -560,7 +565,14 @@ p {
     display: none;
 }
 
-#main #gojuon h2 {}
+#main #gojuon #txt_box {
+    max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@media screen and (max-width: 980px) {}
 
 @media screen and (max-width: 767px) {
     #main #gojuon {
@@ -573,6 +585,9 @@ p {
         margin: 0;
         padding: 0 2em;
         width: calc(90% - 1.75rem);
+    }
+    #main #gojuon #txt_box h2 {
+        margin-top: 1.25em;
     }
     #main #gojuon img.pc_view {
         display: none;

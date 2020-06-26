@@ -212,7 +212,11 @@ p {
     font-size: 1.2rem;
 }
 
-#wrapper {
+#body_wrapper {
+    overflow: hidden;
+}
+
+#cont_wrapper {
     margin: auto;
     max-width: 980px;
     font-family: 'Baloo Chettan 2', cursive, 'M PLUS Rounded 1c', sans-serif;
@@ -497,15 +501,12 @@ p {
 
 #main p.more,
 #main p.view_all {
-    width: 60%;
+    width: 80%;
     height: 3em;
-    margin: 1.8rem 0 0 1.8rem;
+    margin-top: 1.5rem;
     display: inline-flex;
-    justify-content: center;
-    align-items: center;
     background: rgba(240, 240, 240, 0.9);
     text-align: center;
-    vertical-align: middle;
     line-height: 3em;
 }
 
@@ -540,18 +541,16 @@ p {
 
 /* Main .txt_img Common */
 
-#main .txt_img .img_box {
-    margin-right: auto;
-    width: calc(40% - 2rem);
-}
-
 #main .txt_img .txt_box {
     width: calc(60% - 2rem);
-    padding-right: 2em;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+#main .txt_img .img_box {
+    width: calc(40% - 2rem);
 }
 
 #main .txt_img img {
@@ -572,13 +571,13 @@ p {
         margin-top: 2rem;
         flex-direction: column-reverse;
     }
-    #main .txt_img .img_box {
-        width: 100%;
-    }
     #main .txt_img .txt_box {
         margin: 0;
-        padding-left: 3em;
+        padding-left: 2rem;
         min-width: 90%;
+    }
+    #main .txt_img .img_box {
+        width: 100%;
     }
     #main .txt_img .txt_box h2 {
         margin-top: 1.25em;
@@ -599,37 +598,69 @@ p {
     flex-direction: row-reverse;
 }
 
+#main #gojuon .txt_box {
+    padding-right: 2rem;
+}
+
+#main #gojuon .txt_box p.more {
+    margin-right: auto;
+}
+
+#main #gojuon .img_box {
+    margin-right: auto;
+}
+
 @media screen and (max-width: 767px) {
     #main #gojuon {
         margin-top: 2rem;
         flex-direction: column-reverse;
+    }
+    #main #gojuon .txt_box {
+        padding-right: 0;
     }
 }
 
 
 /* Main Houhou */
 
-#main #houhou {}
+#main #houhou .txt_box {
+    padding-left: 2rem;
+    text-align: right;
+}
+
+#main #houhou .txt_box p.more {
+    margin-left: auto;
+}
+
+#main #houhou .img_box {
+    margin-left: auto;
+}
+
+@media screen and (max-width: 767px) {
+    #main #houhou .txt_box {
+        text-align: left;
+    }
+}
 
 
-/* Main Kaiwa */
+/* Study Manu Common */
 
-#kaiwa {
+#main .study_menu {
     justify-content: center;
     text-align: center;
 }
 
-#kaiwa h2 {
+#main .study_menu h2 {
     margin-bottom: 1em;
 }
 
-#kaiwa ul {
+#main .study_menu ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
-#kaiwa ul li {
+#main .study_menu ul li {
     margin-bottom: 6rem;
     width: 300px;
     height: 185px;
@@ -640,22 +671,22 @@ p {
     position: relative;
 }
 
-#kaiwa ul li a {
+#main .study_menu ul li a {
     width: 100%;
     height: 100%;
     display: inline-block;
 }
 
-#kaiwa ul li a:nth-child(1) {
+#main .study_menu ul li a:nth-child(1) {
     transition: .5s;
 }
 
-#kaiwa ul li a:hover:nth-child(1) {
+#main .study_menu ul li a:hover:nth-child(1) {
     background-color: rgba(0, 0, 0, .5);
     transition: .5s;
 }
 
-#kaiwa ul li a span.img_clip {
+#main .study_menu ul li a span.img_clip {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -666,7 +697,7 @@ p {
     overflow: hidden;
 }
 
-#kaiwa ul li a span.img_clip img {
+#main .study_menu ul li a span.img_clip img {
     position: absolute;
     top: 0;
     left: 0;
@@ -677,12 +708,12 @@ p {
     transition: .3s ease-in-out;
 }
 
-#kaiwa ul li a:hover span.img_clip img {
+#main .study_menu ul li a:hover span.img_clip img {
     -webkit-transform: scale(1.3);
     transform: scale(1.3);
 }
 
-#kaiwa ul li a span.view_all_cap {
+#main .study_menu ul li a span.view_all_cap {
     margin-bottom: 0.25rem;
     width: 100%;
     display: inline-block;
@@ -692,18 +723,18 @@ p {
     color: #ffffff;
 }
 
-#kaiwa ul li a:hover span.view_all_cap {
+#main .study_menu ul li a:hover span.view_all_cap {
     opacity: 1;
     transition: .5s;
 }
 
-#kaiwa ul li a p {
+#main .study_menu ul li a p {
     width: auto;
     display: inline-block;
     position: relative;
 }
 
-#kaiwa ul li a p:after {
+#main .study_menu ul li a p:after {
     margin-top: 0.6rem;
     display: inline-block;
     content: "";
@@ -719,22 +750,110 @@ p {
     transition: ease .5s
 }
 
-#kaiwa ul li a:hover p:after {
+#main .study_menu ul li a:hover p:after {
     width: 115%
 }
 
-#kaiwa ul li a.kaiwa_tag {
+#main .study_menu ul li a.study_tag {
     margin-top: 2.75rem;
     width: auto;
     display: inline-block;
 }
 
-#kaiwa ul li a.kaiwa_tag:hover {
+#main .study_menu ul li a.study_tag:hover {
     border-bottom: #222222 dotted 1px;
 }
 
 @media screen and (max-width: 980px) {
-    #kaiwa ul {
+    #main .study_menu ul {
         justify-content: space-evenly;
+    }
+}
+
+
+/* Main Kaiwa */
+
+
+/* Main Bunpou */
+
+
+/* Main News */
+
+#main #news {
+    margin: 0 -200% 10rem;
+    padding: 0 200%;
+    display: flex;
+    background: rgb(255, 252, 228);
+}
+
+#main #news h2 {
+    margin-top: 1em;
+    width: 38.2%;
+    text-align: center;
+}
+
+#main #news dl {
+    width: 61.8%;
+    margin: 2rem auto 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#main #news dl dt {
+    margin-bottom: 1rem;
+    width: 10rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+#main #news dl dt span {
+    margin-right: 1.5rem;
+    padding: 0 .5em 0;
+    display: inline-block;
+    font-size: 0.8em;
+    line-height: 1rem;
+    background: #000000;
+    color: #ffffff;
+}
+
+#main #news dl dd {
+    width: calc(100% - 10rem);
+}
+
+#main #news p.news_view_all {
+    margin: -2rem auto 0 0;
+    padding-left: 7.25rem;
+}
+
+@media screen and (max-width: 767px) {
+    #main #news {
+        justify-content: center;
+    }
+    #main #news h2 {
+        width: 100%;
+    }
+    #main #news dl {
+        padding: 0 2rem 0;
+        width: 100%;
+        flex-direction: column;
+    }
+    #main #news dl dt {
+        margin-bottom: 0.5rem;
+        width: 8rem;
+    }
+    #main #news dl dt span {
+        margin-right: 1rem;
+    }
+    main #news dl dd {
+        min-width: calc(100% - 4rem);
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+        border-bottom: #dddddd solid 1px;
+    }
+    #main #news p.news_view_all {
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+        text-align: center;
     }
 }

@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url('https://fonts.googleapis.com/css2?family=Baloo+Chettan+2:wght@500&family=M+PLUS+Rounded+1c:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Chettan+2&family=Courier+Prime&family=M+PLUS+Rounded+1c&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Sawarabi+Mincho');
 
 /* Reset */
@@ -210,6 +210,7 @@ a {
 
 p {
     font-size: 1.2rem;
+    font-weight: 400;
 }
 
 #body_wrapper {
@@ -219,7 +220,6 @@ p {
 #cont_wrapper {
     margin: auto;
     max-width: 980px;
-    font-family: 'Baloo Chettan 2', cursive, 'M PLUS Rounded 1c', sans-serif;
 }
 
 
@@ -234,6 +234,7 @@ p {
 #header h1 {
     margin: 0.5em 0;
     display: inline-block;
+    font-family: 'Baloo Chettan 2', cursive;
 }
 
 #header h1 span {
@@ -251,6 +252,7 @@ p {
     top: -30px;
     transition: all 0.3s ease 0s;
     font-size: 1.2rem;
+    font-family: 'Baloo Chettan 2', cursive;
 }
 
 #header #gnav.gnav_fixed {
@@ -329,6 +331,7 @@ p {
     pointer-events: none;
     display: none;
     font-size: 1.5em;
+    font-family: 'Baloo Chettan 2', cursive;
 }
 
 #dnav * {
@@ -497,6 +500,7 @@ p {
 #main p {
     display: inline-block;
     line-height: 2em;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
 }
 
 #main p.more,
@@ -523,7 +527,6 @@ p {
 @media screen and (max-width: 767px) {
     #main section {
         flex-direction: column;
-        font-size: 0.8rem;
     }
     #main p {
         font-size: 1rem;
@@ -782,78 +785,87 @@ p {
 #main #news {
     margin: 0 -200% 10rem;
     padding: 0 200%;
+    min-height: 18rem;
     display: flex;
-    background: rgb(255, 252, 228);
+    flex-wrap: wrap;
+    background-image: radial-gradient(73% 147%, #EADFDF 59%, #ECE2DF 100%), radial-gradient(91% 146%, rgba(255, 255, 255, 0.50) 47%, rgba(0, 0, 0, 0.50) 100%);
+    background-blend-mode: screen;
 }
 
 #main #news h2 {
-    margin-top: 1em;
-    width: 38.2%;
+    margin-top: 4rem;
+    height: 5rem;
+    flex-basis: 30%;
     text-align: center;
+    line-height: 5rem;
 }
 
 #main #news dl {
-    width: 61.8%;
-    margin: 2rem auto 0;
+    margin-top: 4rem;
+    height: 10rem;
+    flex-basis: 70%;
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
+    align-content: space-around;
 }
 
 #main #news dl dt {
-    margin-bottom: 1rem;
-    width: 10rem;
     display: flex;
-    justify-content: space-between;
+    flex-basis: 11.5rem;
 }
 
 #main #news dl dt span {
-    margin-right: 1.5rem;
-    padding: 0 .5em 0;
+    margin: 0 1em 0;
+    padding: 0 1em 0;
     display: inline-block;
-    font-size: 0.8em;
+    font-size: 0.8rem;
+    border-radius: 3px;
     line-height: 1rem;
+    align-self: center;
     background: #000000;
     color: #ffffff;
 }
 
 #main #news dl dd {
-    width: calc(100% - 10rem);
+    flex-basis: calc(100% - 11.5rem);
 }
 
 #main #news p.news_view_all {
-    margin: -2rem auto 0 0;
-    padding-left: 7.25rem;
+    margin-top: -7rem;
+    height: 5rem;
+    flex-basis: 30%;
+    text-align: center;
+    line-height: 5rem;
 }
 
 @media screen and (max-width: 767px) {
     #main #news {
-        justify-content: center;
+        min-height: 30rem;
+        align-items: center;
     }
     #main #news h2 {
+        margin-top: 2.5rem;
         width: 100%;
     }
     #main #news dl {
-        padding: 0 2rem 0;
-        width: 100%;
-        flex-direction: column;
+        margin: 0;
+        align-self: center;
+        width: calc(100% - 2rem)
     }
     #main #news dl dt {
-        margin-bottom: 0.5rem;
-        width: 8rem;
+        margin-top: 1rem;
+        line-height: 1.5;
+        flex-basis: 100%;
     }
-    #main #news dl dt span {
-        margin-right: 1rem;
-    }
-    main #news dl dd {
-        min-width: calc(100% - 4rem);
-        margin-bottom: 1rem;
+    #main #news dl dd {
         padding-bottom: 1rem;
+        line-height: 1.5;
+        flex-basis: 100%;
         border-bottom: #dddddd solid 1px;
     }
     #main #news p.news_view_all {
-        width: 100vw;
+        flex-basis: 100%;
         margin: 0;
-        padding: 0;
-        text-align: center;
     }
 }

@@ -253,6 +253,7 @@ p {
     transition: all 0.3s ease 0s;
     font-size: 1.2rem;
     font-family: 'Baloo Chettan 2', cursive;
+    z-index: 10;
 }
 
 #header #gnav.gnav_fixed {
@@ -332,6 +333,7 @@ p {
     display: none;
     font-size: 1.5em;
     font-family: 'Baloo Chettan 2', cursive;
+    z-index: 10;
 }
 
 #dnav * {
@@ -507,7 +509,7 @@ p {
 #main p.view_all {
     width: 80%;
     height: 3em;
-    margin-top: 1.5rem;
+    margin: 1.5rem auto 0;
     display: inline-flex;
     background: rgba(240, 240, 240, 0.9);
     text-align: center;
@@ -695,7 +697,7 @@ p {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: -5;
+    z-index: -10;
     display: inline-block;
     overflow: hidden;
 }
@@ -704,7 +706,7 @@ p {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: -10;
+    z-index: -20;
     -webkit-transform: scale(1);
     transform: scale(1);
     -webkit-transition: .3s ease-in-out;
@@ -774,17 +776,12 @@ p {
 }
 
 
-/* Main Kaiwa */
-
-
-/* Main Bunpou */
-
-
 /* Main News */
 
 #main #news {
-    margin: 0 -200% 10rem;
-    padding: 0 200%;
+    margin: 0 calc(50% - 50vw) 10rem;
+    padding: 0 calc(50vw - 50%);
+    width: 100vw;
     min-height: 18rem;
     display: flex;
     flex-wrap: wrap;
@@ -839,6 +836,10 @@ p {
     line-height: 5rem;
 }
 
+#main #news p.news_view_all a:hover {
+    border-bottom: #222222 dotted 1px;
+}
+
 @media screen and (max-width: 767px) {
     #main #news {
         min-height: 30rem;
@@ -868,4 +869,115 @@ p {
         flex-basis: 100%;
         margin: 0;
     }
+}
+
+
+/* Main Shoukai */
+
+#main #shoukai {}
+
+#main #shoukai h2 {
+    margin-bottom: 1em;
+    text-align: center;
+    width: 100%;
+}
+
+#main #shoukai ul {
+    margin: 0 calc(50% - 50vw) 3.75rem;
+    width: 100vw;
+    height: 16.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+#main #shoukai ul li {
+    flex: 1;
+    display: flex;
+    text-align: center;
+    position: relative;
+}
+
+#main #shoukai ul li a {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    transition: .5s;
+}
+
+#main #shoukai ul li a:hover {
+    background-color: rgba(0, 0, 0, .5);
+    transition: .5s;
+}
+
+#main #shoukai ul li a span.img_clip {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: -10;
+    display: inline-block;
+    overflow: hidden;
+}
+
+#main #shoukai ul li a span.img_clip img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: -20;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+
+#main #shoukai ul li a:hover span.img_clip img {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+}
+
+#main #shoukai ul li a span.view_all_cap {
+    width: 100%;
+    display: inline-block;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    line-height: 16.5rem;
+    transition: .5s;
+    color: #ffffff;
+}
+
+#main #shoukai ul li a:hover span.view_all_cap {
+    opacity: 1;
+    transition: .5s;
+}
+
+#main #shoukai ul li a p {
+    width: auto;
+    display: inline-block;
+    position: relative;
+}
+
+#main #shoukai ul li a p:after {
+    margin-top: 0.6rem;
+    display: inline-block;
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 0;
+    height: 1px;
+    border-bottom: #222222 solid 2px;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    -webkit-transition: ease .5s;
+    transition: ease .5s
+}
+
+#main #shoukai ul li a:hover p:after {
+    width: 115%
 }

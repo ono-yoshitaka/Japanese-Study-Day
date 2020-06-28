@@ -874,7 +874,10 @@ p {
 
 /* Main Shoukai */
 
-#main #shoukai {}
+#main #shoukai {
+    margin: 0 calc(50% - 50vw) 3.75rem;
+    width: 100vw;
+}
 
 #main #shoukai h2 {
     margin-bottom: 1em;
@@ -883,14 +886,11 @@ p {
 }
 
 #main #shoukai ul {
-    margin: 0 calc(50% - 50vw) 3.75rem;
-    width: 100vw;
-    height: 16.5rem;
     display: flex;
-    justify-content: space-between;
 }
 
 #main #shoukai ul li {
+    height: calc(264 / 327 * 100%);
     flex: 1;
     display: flex;
     text-align: center;
@@ -944,9 +944,9 @@ p {
     display: inline-block;
     opacity: 0;
     position: absolute;
-    top: 0;
+    top: 50%;
     left: 0;
-    line-height: 16.5rem;
+    transform: translateY(-50%);
     transition: .5s;
     color: #ffffff;
 }
@@ -980,4 +980,10 @@ p {
 
 #main #shoukai ul li a:hover p:after {
     width: 115%
+}
+
+@media screen and (max-width: 767px) {
+    #main #shoukai ul {
+        flex-direction: column;
+    }
 }

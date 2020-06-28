@@ -775,6 +775,12 @@ p {
     }
 }
 
+@media screen and (max-width: 767px) {
+    #main .study_menu ul {
+        margin-bottom: -2rem;
+    }
+}
+
 
 /* Main News */
 
@@ -875,22 +881,24 @@ p {
 /* Main Shoukai */
 
 #main #shoukai {
-    margin: 0 calc(50% - 50vw) 3.75rem;
+    margin: 0 calc(50% - 50vw) 10rem;
     width: 100vw;
 }
 
 #main #shoukai h2 {
     margin-bottom: 1em;
-    text-align: center;
     width: 100%;
+    text-align: center;
 }
 
 #main #shoukai ul {
+    margin-bottom: 4rem;
+    width: 100vw;
+    height: calc(100vw * 0.206);
     display: flex;
 }
 
 #main #shoukai ul li {
-    height: calc(264 / 327 * 100%);
     flex: 1;
     display: flex;
     text-align: center;
@@ -984,6 +992,13 @@ p {
 
 @media screen and (max-width: 767px) {
     #main #shoukai ul {
+        margin-bottom: -2rem;
+        height: 100%;
         flex-direction: column;
+    }
+    #main #shoukai ul li {
+        width: 100vw;
+        height: calc(100vw * 0.618);
+        margin-bottom: 5rem;
     }
 }

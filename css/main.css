@@ -1019,7 +1019,6 @@ p {
 }
 
 #footer section {
-    height: 80%;
     display: flex;
     flex: 1 calc(50% - 2rem);
 }
@@ -1038,10 +1037,14 @@ p {
     font-size: 0.8em;
 }
 
-#footer small a {}
-
 #footer small a:hover {
     border-bottom: #ffffff dotted 1px;
+}
+
+@media screen and (max-width: 980px) {
+    #footer section {
+        align-content: center;
+    }
 }
 
 
@@ -1052,7 +1055,7 @@ p {
 }
 
 #footer #fnav ul {
-    margin: 40% 0 0 auto;
+    margin-left: auto;
     width: calc(100% * 1 / 2);
     height: 10rem;
     display: flex;

@@ -1055,8 +1055,15 @@ p {
     justify-items: center;
 }
 
-#footer #fnav ul {
-    margin-left: auto;
+#footer #fnav #fnav_wrap {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#footer #fnav #fnav_wrap ul {
     width: calc(100% * 1 / 2);
     height: 10rem;
     display: flex;
@@ -1064,16 +1071,16 @@ p {
     align-content: space-around;
 }
 
-#footer #fnav ul li {
+#footer #fnav #fnav_wrap ul li {
     flex-basis: 50%;
 }
 
-#footer #fnav ul li a {
+#footer #fnav #fnav_wrap ul li a {
     display: inline-block;
     position: relative;
 }
 
-#footer #fnav ul li a:after {
+#footer #fnav #fnav_wrap ul li a:after {
     margin-top: 0.6rem;
     display: inline-block;
     content: "";
@@ -1089,7 +1096,7 @@ p {
     transition: ease .5s
 }
 
-#footer #fnav ul li a:hover:after {
+#footer #fnav #fnav_wrap ul li a:hover:after {
     width: 115%
 }
 
@@ -1161,4 +1168,21 @@ p {
 
 #footer #prof #prof_wrap dl dd {
     width: calc(100% - 3rem);
+}
+
+@media screen and (max-width: 767px) {
+    #footer section {
+        display: flex;
+        flex: 1 calc(100% - 2rem);
+    }
+    #footer #fnav #fnav_wrap ul {
+        margin-left: 3rem;
+        width: 60%;
+    }
+    #footer #fnav {
+        margin-top: 3rem;
+    }
+    #footer small {
+        margin: 3rem auto 0;
+    }
 }

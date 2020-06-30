@@ -1052,6 +1052,7 @@ p {
 
 #footer #fnav {
     align-items: center;
+    justify-items: center;
 }
 
 #footer #fnav ul {
@@ -1097,10 +1098,15 @@ p {
 
 #footer #prof {
     flex-direction: column;
+    align-items: center;
 }
 
-#footer #prof h2 {
-    margin: 2em 0 -3rem;
+#footer #prof #prof_wrap {
+    width: 12.5rem;
+}
+
+#footer #prof #prof_wrap h2 {
+    margin: 2em 0 -2em;
     width: 5rem;
     min-height: 5rem;
     font-size: 1.25em;
@@ -1113,8 +1119,8 @@ p {
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-#footer #prof img {
-    margin: 1rem;
+#footer #prof #prof_wrap img {
+    margin: 0 1rem 1rem 1rem;
     width: 10rem;
     height: 10rem;
     object-fit: cover;
@@ -1123,23 +1129,23 @@ p {
     border: #ffffff solid 0.25em;
 }
 
-#footer #prof p {
+#footer #prof #prof_wrap p {
     width: 12.5rem;
 }
 
-#footer #prof h3#myname {
+#footer #prof #prof_wrap h3#myname {
     margin-bottom: 1rem;
     width: 12.5rem;
     font-size: 1.5em;
     text-align: center;
 }
 
-#footer #prof h3#myname span {
+#footer #prof #prof_wrap h3#myname span {
     display: inline-block;
     font-size: 0.6em;
 }
 
-#footer #prof dl {
+#footer #prof #prof_wrap dl {
     width: 12.5rem;
     display: flex;
     flex-wrap: wrap;
@@ -1147,12 +1153,12 @@ p {
     align-items: center;
 }
 
-#footer #prof dl dt {
+#footer #prof #prof_wrap dl dt {
     width: 3rem;
     font-size: 1.5em;
     text-align: center;
 }
 
-#footer #prof dl dd {
+#footer #prof #prof_wrap dl dd {
     width: calc(100% - 3rem);
 }
